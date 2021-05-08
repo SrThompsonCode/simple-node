@@ -19,10 +19,11 @@ jobs:
       ### ⬇ IMPORTANT PART ⬇ ###
 
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-        env: 
-          MY_SECRET: ${{ secrets.TEST }}
         uses: gonuit/heroku-docker-deploy@v1.3.2 # GitHub action name (leave it as it is).
         with:
+          usedocker: true
+          docker_build_args: |
+            MY_SECRET
           # Below you must provide variables for your Heroku app.
 
           # The email address associated with your Heroku account.
@@ -55,5 +56,8 @@ jobs:
           # By default, this argument is set to "web".
           # For more information look at https://devcenter.heroku.com/articles/process-model
           process_type: web
+        env:
+          MY_SECRET: ${{ secrets.TEST }}
+        
 ### ⬆ IMPORTANT PART ⬆ ###
 
