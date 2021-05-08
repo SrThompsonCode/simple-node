@@ -30,7 +30,7 @@ jobs:
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           docker_heroku_process_type: web
         env:
-          MY_SECRET: ${{ secrets.TEST }}
+          HD_MY_SECRET: ${{ secrets.TEST }}
         
 ### ⬆ IMPORTANT PART ⬆ ###
 
