@@ -2,7 +2,7 @@ FROM node:16-alpine
 
 WORKDIR /home/node/
 
-ENV MY_SECRET="DOCKER ENV SECRET"
+# ENV MY_SECRET="DOCKER ENV SECRET"
 
 COPY package*.json ./
 
